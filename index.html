@@ -14,26 +14,36 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
       background: #ffffff;
-      font-family: Arial, sans-serif;
       color: #111;
+      font-family: Arial, sans-serif;
     }
 
-    .topbar {
+    .top-logo {
+      position: absolute;
+      top: 20px;
+      left: 24px;
+      z-index: 10;
+    }
+
+    .top-logo img {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+
+    .menu-bar {
+      margin-top: 96px;
       background: #e62648;
-      min-height: 72px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      position: relative;
-      padding: 12px 180px 12px 24px;
+      align-items: center;
+      padding: 14px 20px;
     }
 
     .menu {
       display: flex;
-      align-items: center;
-      gap: 34px;
+      gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -43,6 +53,7 @@
       text-decoration: none;
       font-size: 17px;
       font-weight: 600;
+      line-height: 1;
       transition: opacity 0.2s ease;
     }
 
@@ -50,23 +61,8 @@
       opacity: 0.8;
     }
 
-    .top-logo {
-      position: absolute;
-      top: 50%;
-      right: 24px;
-      transform: translateY(-50%);
-      display: flex;
-      align-items: center;
-    }
-
-    .top-logo img {
-      max-height: 46px;
-      width: auto;
-      display: block;
-    }
-
     .hero {
-      min-height: calc(100vh - 72px);
+      min-height: calc(100vh - 150px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -140,40 +136,23 @@
       border-bottom-color: #ce2b37;
     }
 
-    @media (max-width: 900px) {
-      .topbar {
-        padding: 18px 20px;
-        justify-content: center;
+    @media (max-width: 768px) {
+      .top-logo {
+        top: 14px;
+        left: 16px;
+      }
+
+      .top-logo img {
+        height: 42px;
+      }
+
+      .menu-bar {
+        margin-top: 74px;
+        padding: 12px 16px;
       }
 
       .menu {
         gap: 18px;
-        padding-top: 44px;
-      }
-
-      .top-logo {
-        top: 12px;
-        right: 20px;
-        transform: none;
-      }
-
-      .top-logo img {
-        max-height: 36px;
-      }
-
-      .hero {
-        min-height: calc(100vh - 110px);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .topbar {
-        padding: 16px 14px;
-      }
-
-      .menu {
-        gap: 12px 16px;
-        padding-top: 40px;
       }
 
       .menu a {
@@ -187,7 +166,6 @@
       .italy-flag-line {
         width: 260px;
         height: 12px;
-        margin-bottom: 22px;
       }
 
       .subtitle {
@@ -197,15 +175,15 @@
       .catalog-link a {
         font-size: 18px;
       }
-
-      .top-logo img {
-        max-height: 30px;
-      }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <div class="top-logo">
+    <img src="pictures/logo.png" alt="Maretti logo">
+  </div>
+
+  <div class="menu-bar">
     <nav class="menu">
       <a href="#">Главная</a>
       <a href="#">О бренде</a>
@@ -213,11 +191,7 @@
       <a href="#">Сервис</a>
       <a href="#">Контакты</a>
     </nav>
-
-    <div class="top-logo">
-      <img src="pictures/logo.png" alt="Maretti logo" />
-    </div>
-  </header>
+  </div>
 
   <main class="hero">
     <div class="wrapper">
