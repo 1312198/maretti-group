@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maretti</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       background: #ffffff;
       color: #111;
       font-family: Arial, sans-serif;
     }
 
     .header {
-      position: relative;
-      padding-top: 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #f0f0f0;
     }
 
-    .top-logo {
-      position: absolute;
-      top: 20px;
-      left: 24px;
-      z-index: 10;
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .top-logo img {
+    .logo img {
       height: 56px;
       width: auto;
       display: block;
     }
 
+    .header-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      line-height: 1.4;
+    }
+
+    .header-contact span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .header-contact a {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .header-contact a:hover {
+      color: #e62648;
+    }
+
     .menu-bar {
-      margin-top: 90px;
       background: #e62648;
-      padding: 12px 20px;
-      text-align: center;
+    }
+
+    .menu-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: center;
     }
 
     .menu {
-      display: inline-flex;
-      gap: 36px;
-      flex-wrap: wrap;
-      justify-content: center;
+      list-style: none;
+      display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 42px;
+      min-height: 56px;
+      text-align: center;
     }
 
     .menu a {
       color: #ffffff;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
-      line-height: 1;
+      transition: opacity 0.2s ease;
     }
 
     .menu a:hover {
@@ -64,34 +101,34 @@
     }
 
     .hero {
-      min-height: calc(100vh - 140px);
+      min-height: calc(100vh - 150px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     .wrapper {
       text-align: center;
-      max-width: 90%;
+      max-width: 700px;
     }
 
     h1 {
-      margin: 0 0 24px;
+      font-family: "Harlow Solid Italic", cursive;
       font-size: 96px;
       font-weight: normal;
       line-height: 1;
       color: #111;
-      font-family: "Harlow Solid Italic", cursive;
+      margin-bottom: 24px;
     }
 
     .italy-flag-line {
       width: 360px;
       height: 16px;
-      display: flex;
       margin: 0 auto 28px;
-      border-radius: 999px;
+      display: flex;
       overflow: hidden;
+      border-radius: 999px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
@@ -112,20 +149,19 @@
     }
 
     .subtitle {
-      margin: 0;
       font-size: 28px;
       color: #444;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
     .catalog-link {
-      margin-top: 32px;
+      margin-top: 34px;
     }
 
     .catalog-link a {
-      font-size: 20px;
       color: #009246;
       text-decoration: none;
+      font-size: 20px;
       border-bottom: 1px solid #009246;
       padding-bottom: 2px;
       transition: all 0.2s ease;
@@ -136,23 +172,57 @@
       border-bottom-color: #ce2b37;
     }
 
-    @media (max-width: 768px) {
-      .top-logo {
-        top: 14px;
-        left: 16px;
-      }
-
-      .top-logo img {
-        height: 42px;
-      }
-
-      .menu-bar {
-        margin-top: 72px;
-        padding: 10px 14px;
+    @media (max-width: 900px) {
+      .header-inner,
+      .menu-inner {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       .menu {
-        gap: 16px;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        height: 48px;
+      }
+
+      h1 {
+        font-size: 72px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .header-contact {
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-contact span {
+        font-size: 13px;
+      }
+
+      .header-contact a {
+        font-size: 18px;
+      }
+
+      .logo img {
+        height: 42px;
+      }
+
+      .menu {
+        gap: 14px 18px;
+        min-height: auto;
       }
 
       .menu a {
@@ -160,7 +230,7 @@
       }
 
       h1 {
-        font-size: 64px;
+        font-size: 56px;
       }
 
       .italy-flag-line {
@@ -175,23 +245,37 @@
       .catalog-link a {
         font-size: 18px;
       }
+
+      .hero {
+        padding: 40px 16px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header class="header">
-    <div class="top-logo">
-      <img src="logo.png" alt="Maretti logo" />
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <img src="logo.png" alt="Maretti">
+      </a>
+
+      <div class="header-contact">
+        <span>По вопросам дистрибуции:</span>
+        <a href="tel:+79582032658">8 (958)203-26-58</a>
+      </div>
     </div>
 
     <div class="menu-bar">
-      <nav class="menu">
-        <a href="#">Главная</a>
-        <a href="#">О бренде</a>
-        <a href="#">Сотрудничество</a>
-        <a href="#">Сервис</a>
-        <a href="#">Контакты</a>
-      </nav>
+      <div class="menu-inner">
+        <ul class="menu">
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">О бренде</a></li>
+          <li><a href="#">Сотрудничество</a></li>
+          <li><a href="#">Сервис</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -207,12 +291,13 @@
 
       <p class="subtitle">Сайт скоро будет доступен</p>
 
-      <p class="catalog-link">
+      <div class="catalog-link">
         <a href="Catalog%20Maretti%202026.pdf" download>
           Скачать каталог Maretti 2026
         </a>
-      </p>
+      </div>
     </div>
   </main>
+
 </body>
 </html>
