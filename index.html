@@ -3,26 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Maretti</title>
-
-  <!-- Положи файл favicon.png рядом с index.html -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
+      background: #ffffff;
+      color: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      position: relative;
+      padding-top: 20px;
+    }
+
+    .top-logo {
+      position: absolute;
+      top: 20px;
+      left: 24px;
+      z-index: 10;
+    }
+
+    .top-logo img {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+
+    .menu-bar {
+      margin-top: 90px;
+      background: #e62648;
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    .menu {
+      display: inline-flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .menu a:hover {
+      opacity: 0.8;
+    }
+
+    .hero {
+      min-height: calc(100vh - 140px);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      font-family: "Harlow Solid Italic", cursive;
+      padding: 40px 20px;
     }
 
     .wrapper {
       text-align: center;
-      padding: 20px;
       max-width: 90%;
     }
 
@@ -32,6 +82,7 @@
       font-weight: normal;
       line-height: 1;
       color: #111;
+      font-family: "Harlow Solid Italic", cursive;
     }
 
     .italy-flag-line {
@@ -64,7 +115,6 @@
       margin: 0;
       font-size: 28px;
       color: #444;
-      font-family: Arial, sans-serif;
       letter-spacing: 0.5px;
     }
 
@@ -73,7 +123,6 @@
     }
 
     .catalog-link a {
-      font-family: Arial, sans-serif;
       font-size: 20px;
       color: #009246;
       text-decoration: none;
@@ -87,7 +136,29 @@
       border-bottom-color: #ce2b37;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
+      .top-logo {
+        top: 14px;
+        left: 16px;
+      }
+
+      .top-logo img {
+        height: 42px;
+      }
+
+      .menu-bar {
+        margin-top: 72px;
+        padding: 10px 14px;
+      }
+
+      .menu {
+        gap: 16px;
+      }
+
+      .menu a {
+        font-size: 14px;
+      }
+
       h1 {
         font-size: 64px;
       }
@@ -95,7 +166,6 @@
       .italy-flag-line {
         width: 260px;
         height: 12px;
-        margin-bottom: 22px;
       }
 
       .subtitle {
@@ -109,22 +179,40 @@
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1>Maretti</h1>
-
-    <div class="italy-flag-line">
-      <div class="green"></div>
-      <div class="white"></div>
-      <div class="red"></div>
+  <header class="header">
+    <div class="top-logo">
+      <img src="logo.png" alt="Maretti logo" />
     </div>
 
-    <p class="subtitle">Сайт скоро будет доступен</p>
+    <div class="menu-bar">
+      <nav class="menu">
+        <a href="#">Главная</a>
+        <a href="#">О бренде</a>
+        <a href="#">Сотрудничество</a>
+        <a href="#">Сервис</a>
+        <a href="#">Контакты</a>
+      </nav>
+    </div>
+  </header>
 
-    <p class="catalog-link">
-      <a href="Catalog%20Maretti%202026.pdf" download>
-        Скачать каталог Maretti 2026
-      </a>
-    </p>
-  </div>
+  <main class="hero">
+    <div class="wrapper">
+      <h1>Maretti</h1>
+
+      <div class="italy-flag-line">
+        <div class="green"></div>
+        <div class="white"></div>
+        <div class="red"></div>
+      </div>
+
+      <p class="subtitle">Сайт скоро будет доступен</p>
+
+      <p class="catalog-link">
+        <a href="Catalog%20Maretti%202026.pdf" download>
+          Скачать каталог Maretti 2026
+        </a>
+      </p>
+    </div>
+  </main>
 </body>
 </html>
