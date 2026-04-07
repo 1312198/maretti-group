@@ -3,26 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Maretti</title>
 
-  <!-- Положи файл favicon.png рядом с index.html -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
+      background: #ffffff;
+      font-family: Arial, sans-serif;
+      color: #111;
+    }
+
+    .topbar {
+      background: #e62648;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      font-family: "Harlow Solid Italic", cursive;
+      position: relative;
+      padding: 12px 180px 12px 24px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .menu a:hover {
+      opacity: 0.8;
+    }
+
+    .top-logo {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+    }
+
+    .top-logo img {
+      max-height: 46px;
+      width: auto;
+      display: block;
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
     }
 
     .wrapper {
       text-align: center;
-      padding: 20px;
       max-width: 90%;
     }
 
@@ -32,6 +84,7 @@
       font-weight: normal;
       line-height: 1;
       color: #111;
+      font-family: "Harlow Solid Italic", cursive;
     }
 
     .italy-flag-line {
@@ -54,6 +107,8 @@
 
     .white {
       background: #ffffff;
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .red {
@@ -64,7 +119,6 @@
       margin: 0;
       font-size: 28px;
       color: #444;
-      font-family: Arial, sans-serif;
       letter-spacing: 0.5px;
     }
 
@@ -73,7 +127,6 @@
     }
 
     .catalog-link a {
-      font-family: Arial, sans-serif;
       font-size: 20px;
       color: #009246;
       text-decoration: none;
@@ -87,7 +140,46 @@
       border-bottom-color: #ce2b37;
     }
 
+    @media (max-width: 900px) {
+      .topbar {
+        padding: 18px 20px;
+        justify-content: center;
+      }
+
+      .menu {
+        gap: 18px;
+        padding-top: 44px;
+      }
+
+      .top-logo {
+        top: 12px;
+        right: 20px;
+        transform: none;
+      }
+
+      .top-logo img {
+        max-height: 36px;
+      }
+
+      .hero {
+        min-height: calc(100vh - 110px);
+      }
+    }
+
     @media (max-width: 480px) {
+      .topbar {
+        padding: 16px 14px;
+      }
+
+      .menu {
+        gap: 12px 16px;
+        padding-top: 40px;
+      }
+
+      .menu a {
+        font-size: 14px;
+      }
+
       h1 {
         font-size: 64px;
       }
@@ -105,26 +197,46 @@
       .catalog-link a {
         font-size: 18px;
       }
+
+      .top-logo img {
+        max-height: 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1>Maretti</h1>
+  <header class="topbar">
+    <nav class="menu">
+      <a href="#">Главная</a>
+      <a href="#">О бренде</a>
+      <a href="#">Сотрудничество</a>
+      <a href="#">Сервис</a>
+      <a href="#">Контакты</a>
+    </nav>
 
-    <div class="italy-flag-line">
-      <div class="green"></div>
-      <div class="white"></div>
-      <div class="red"></div>
+    <div class="top-logo">
+      <img src="pictures/logo.png" alt="Maretti logo" />
     </div>
+  </header>
 
-    <p class="subtitle">Сайт скоро будет доступен</p>
+  <main class="hero">
+    <div class="wrapper">
+      <h1>Maretti</h1>
 
-    <p class="catalog-link">
-      <a href="Catalog%20Maretti%202026.pdf" download>
-        Скачать каталог Maretti 2026
-      </a>
-    </p>
-  </div>
+      <div class="italy-flag-line">
+        <div class="green"></div>
+        <div class="white"></div>
+        <div class="red"></div>
+      </div>
+
+      <p class="subtitle">Сайт скоро будет доступен</p>
+
+      <p class="catalog-link">
+        <a href="Catalog%20Maretti%202026.pdf" download>
+          Скачать каталог Maretti 2026
+        </a>
+      </p>
+    </div>
+  </main>
 </body>
 </html>
